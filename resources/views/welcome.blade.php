@@ -14,7 +14,7 @@
 <section class="Accueil" id="Accueil">
 
     <div class="image" data-aos="fade-down">
-        <img src="images/eco.png" alt="">
+        <img src="{{ asset('assets/images/eco.png') }}" alt="">
     </div>
 
     <div class="content" data-aos="fade-up">
