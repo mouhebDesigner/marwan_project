@@ -1,0 +1,80 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CourController;
+use App\Http\Controllers\NoteController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Admin\EleveController;
+use App\Http\Controllers\NoteEtudiantController;
+use App\Http\Controllers\Admin\ContactController;
+use App\Http\Controllers\Admin\MatiereController;
+use App\Http\Controllers\Admin\ActualiteController;
+use App\Http\Controllers\Admin\FormateurController;
+use App\Http\Controllers\MatiereEtudiantController;
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+// admin part
+Route::middleware(['auth'])->group(function () {
+    Route::prefix('admin')->name('admin.')->group(function () {
+        Route::resources([
+            'formateurs' => FormateurController::class,
+            'students' => EleveController::class,
+            'actualites' => ActualiteController::class,
+            'matieres' => MatiereController::class,
+        ]);
+
+        Route::get('contacts', [ContactController::class, 'index'])->name('contacts.index');
+        Route::delete('contacts', [ContactController::class, 'destroy'])->name('contacts.destroy');
+
+    });
+});
+Route::middleware(['auth'])->group(function () {
+    Route::prefix('formateur')->name('formateur.')->group(function () {
+        Route::resources([
+            'cours' => CourController::class,
+            'notes' => NoteController::class,
+            'contacts' => ContactController::class,
+            'actualites' => ActualiteController::class,
+            'matieres' => MatiereController::class,
+            'students' => EleveController::class
+        ]);
+
+        Route::get('eleves', [EleveController::class, 'index'])->name('eleves.index');
+        Route::get('profile', [ProfileController::class, 'index'])->name('profile.index');
+        Route::put('profile', [ProfileController::class, 'update'])->name('profile.update');
+
+    });
+});
+Route::middleware(['auth'])->group(function () {
+        
+        Route::resources([
+            'contacts' => ContactController::class,
+        ]);
+        Route::get('cours', [CourController::class, 'index'])->name('cours.index');
+        Route::get('notes', [NoteEtudiantController::class, 'index'])->name('notes.index');
+        Route::get('matieres', [MatiereEtudiantController::class, 'index'])->name('matieres.index');
+        Route::get('actualites', [ActualiteController::class, 'index'])->name('actualites.index');
+        Route::get('profile', [ProfileController::class, 'index'])->name('profile.index');
+        Route::put('profile', [ProfileController::class, 'update'])->name('profile.update');
+
+});
+
+Route::get('/', function () {
+    return view('welcome');
+});
+Route::get('/choisir', function () {
+    return view('auth.login_users');
+});
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

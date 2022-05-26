@@ -1,0 +1,71 @@
+.delete-confirm{
+    border: none;
+    background: transparent;
+}
+.delete-confirm i{
+    color: #bb1f1f;
+    transform: scale(1.5);
+}
+.edit-confirm i{
+    color: #3393b2;
+    transform: scale(.8);
+}
+.d-flex{
+    display: flex;
+} 
+.justify-content-around{
+    justify-content: space-around;
+}
+.justify-content-between{
+    justify-content: space-between;
+}
+.justify-content-end{
+    justify-content: flex-end;
+}
+.justify-content-start{
+    justify-content: flex-start;
+}
+.flex-column{
+    flex-direction: column;
+}
+.align-items-center{
+    align-items: center;
+}
+.align-items-end{
+    align-items: flex-end;
+}
+.align-items-start{
+    align-items: flex-start;
+}
+
+table{
+    width: calc(100% - 30px) !important;
+    margin: 15px !important;
+}
+.main-content-header .search-add{
+    width:  calc(100% - 30px) !important;
+    margin: 15px !important;
+    
+}
+.main-content-header .search-add form input{
+    width: 200px;
+    height: 35px;
+    padding: 0px 10px;
+}
+.main-content-header .search-add form button{
+    width: 50px;
+    height: 35px;
+    position: relative;
+    right: 22px;
+}
+.error-feedback{
+    color: rgb(182, 38, 38);
+    font-size: 15px;
+}
+table td {
+    color: black;
+    border-top: 3px solid black;
+    border-left: 3px solid black;
+    font-size: 25px;
+    padding: 13px 10px;
+}
