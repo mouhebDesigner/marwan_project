@@ -23,10 +23,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        if(Auth::user()->isAdmin() || Auth::user()->isFormateur()){
 
-            return view('admin.home');
-        }
-        return view('home');
+        return view('admin.home');
     }
 }

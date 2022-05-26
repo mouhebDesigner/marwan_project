@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cour;
+use App\Models\Matiere;
 use Illuminate\Http\Request;
 
 class CourController extends Controller
@@ -13,9 +15,11 @@ class CourController extends Controller
      */
     public function index()
     {
-        //
-    }
+        $cours = Cour::all();
 
+        return view('cours.index', compact('cours'));
+    }
+    
     /**
      * Show the form for creating a new resource.
      *
@@ -23,9 +27,10 @@ class CourController extends Controller
      */
     public function create()
     {
-        //
+        $matieres = Matiere::all();
+        return view('cours.create', compact('matieres'));
     }
-
+        
     /**
      * Store a newly created resource in storage.
      *
@@ -34,6 +39,9 @@ class CourController extends Controller
      */
     public function store(Request $request)
     {
+        Cour::create($request->all());
+
+        return redirect('formateur/cours');
         //
     }
 
@@ -56,7 +64,6 @@ class CourController extends Controller
      */
     public function edit($id)
     {
-        //
     }
 
     /**
@@ -77,8 +84,12 @@ class CourController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Cour $cour)
     {
-        //
+
+        $cour->delete();
+
+        return redirect('formateur/cours')->with('deleted', 'Ce cour a été supprimé avec succé');
+        
     }
 }

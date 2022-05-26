@@ -47,11 +47,16 @@
             <h3><a href="{{ route('admin.matieres.create') }}">Ajouter un nouvel matiéres</a></h3>
             <h3><a href="{{ route('admin.matieres.index') }}">Liste des matiéres</a></h3>
             <h3><a href="{{ route('admin.contacts.index') }}"> Messages de contact</a></h3>
-        @else 
+        @elseif(Auth::user()->isFormateur())
             <h1>Formateur </h1>
             <h3><a href="{{ route('formateur.cours.index') }}">Gérer des cours</a></h3>
             <h3><a href="{{ route('formateur.notes.index') }}">Gérer des notes</a></h3>
             <h3><a href="{{ route('formateur.students.index') }}">Liste des élèves</a></h3>
+        @else 
+            <h1>Elève </h1>
+            <h3><a href="{{ route('cours.index') }}">Lister les cours</a></h3>
+            <h3><a href="{{ route('notes.index') }}">Lister les notes</a></h3>
+            <h3><a href="{{ route('matieres.index') }}">Listes les matiéres</a></h3>
         @endif
       </div>
     </header>

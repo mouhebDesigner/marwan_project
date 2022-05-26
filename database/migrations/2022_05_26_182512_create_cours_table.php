@@ -15,6 +15,7 @@ class CreateCoursTable extends Migration
     {
         Schema::create('cours', function (Blueprint $table) {
             $table->id();
+            $table->string("titre"); 
             $table->string("fichier"); 
             $table->foreignId('matiere_id')->constrained('matieres')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();

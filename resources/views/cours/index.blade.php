@@ -17,36 +17,44 @@
             <div>
 
             </div>
+            @if(Auth::user()->isFormateur())
             <a href="{{ route('formateur.cours.create') }}">
                 Ajouter cour
             </a>
+            @endif
         </div>
         <table border="2">
             <tr>
-                <th class="id_h1">Id </th>
-                <th class="name_h1">fichier</th>
+                <th class="name_h1">Matiere</th>
+                <th class="name_h1">Titre</th>
+                <th class="name_h1">Fichier</th>
+                @if(Auth::user()->isFormateur())
                 <th>Action</th>
+                @endif
             </tr>
             @foreach($cours as $cour)
             <tr>
-                <td>{{ $cour->id }}</td>
+                <td>{{ $cour->matiere->label }}</td>
+                <td>{{ $cour->titre }}</td>
                 <td>
                     <a href="{{ url('download/'.$cour->id) }}">
                         Télécharger cour
                     </a>
                 </td>
+                @if(Auth::user()->isFormateur())
                 <td>
                     <div class="d-flex justify-content-around">
-                        <form action="{{ route('admin.matieres.destroy', ['matiere' => $cour]) }}" method="post">
+                        <form action="{{ route('formateur.cours.destroy', ['cour' => $cour]) }}" method="post">
                             @csrf
                             @method('delete')
-                            <button type="submit" class="btn-delete delete-confirm" style="cursor:pointer" onclick="return confirm('voulez-vous vraiment supprimer cette matière')">
+                            <button type="submit" class="btn-delete delete-confirm" style="cursor:pointer" onclick="return confirm('voulez-vous vraiment supprimer ce cour')">
                                 <i class="fa fa-trash"></i>
                             </button>
                         </form>
                        
                     </div>
                 </td>
+                @endif
             </tr>
             @endforeach
 

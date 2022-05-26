@@ -14,4 +14,8 @@ class Cour extends Model
     public function matiere(){
         return $this->belongsTo(Matiere::class);
     }
+
+    public function setFichierAttribute($password){
+        $this->attributes['fichier'] = request()->fichier->store('files');
+    }
 }

@@ -92,4 +92,10 @@ class MatiereController extends Controller
         return redirect('admin/matieres')->with('deleted',  'Matiére a été supprimé avec succé');
         
     }
+
+    public function cours($id){
+        $cours = Matiere::find($id)->cours()->get();
+        return view('cours.index', compact('cours'));
+
+    }
 }

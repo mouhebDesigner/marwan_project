@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Cour;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CourController;
 use App\Http\Controllers\NoteController;
@@ -61,7 +62,7 @@ Route::middleware(['auth'])->group(function () {
         ]);
         Route::get('cours', [CourController::class, 'index'])->name('cours.index');
         Route::get('notes', [NoteEtudiantController::class, 'index'])->name('notes.index');
-        Route::get('matieres', [MatiereEtudiantController::class, 'index'])->name('matieres.index');
+        Route::get('matieres', [MatiereController::class, 'index'])->name('matieres.index');
         Route::get('actualites', [ActualiteController::class, 'index'])->name('actualites.index');
         Route::get('profile', [ProfileController::class, 'index'])->name('profile.index');
         Route::put('profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -77,4 +78,11 @@ Route::get('/choisir', function () {
 
 Auth::routes();
 
+Route::get('matiere/{id}/cours', [MatiereController::class, 'cours'])->middleware('auth');
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('download/{id}', function($id){
+    $cour = Cour::find($id);
+    $filepath = public_path('/').$cour->fichier;
+    return Response::download($filepath);
+})->name('download.file');
