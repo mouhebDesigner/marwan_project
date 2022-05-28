@@ -10,7 +10,11 @@
     @include('includes.header')
  
     <section class="packages fc" id="packages">
-        
+        @if(session('created'))
+            <div class="alert alert-success" role="alert">
+                {{ session('created') }}
+            </div>
+        @endif
     <h1 class="heading"> Contactez-<span>nous</span> </h1>
 
     <div class="box-container">
