@@ -46,6 +46,114 @@
     @yield('script')
     <script>
       $(document).ready(function(){
+          $("#search_btn").on('click', function(e){
+            let sizes = [];
+            $(".size_checked").each(function( index ) {
+                if(this.checked){
+                    // console.log($(this).val());
+                    sizes.push($(this).val());
+                }
+            });
+            let categories = [];
+            $(".categorie_checked").each(function( index ) {
+                if(this.checked){
+                    // console.log($(this).val());
+                    categories.push($(this).val());
+                }
+            });
+            let colors = [];
+            $(".checkedColor").each(function( index ) {
+                if(this.checked){
+                    // console.log($(this).val());
+                    colors.push($(this).val());
+                }
+            });
+            var data = {
+                'colors' : colors,
+                'categories' : categories,
+                'sizes' : sizes,
+                'search_by' : $('.search_by').val()
+            };
+            $.ajax({
+                type: "GET",
+                url: $(this).data('url'),
+                data: data,
+                success: function(response){
+                    $(".list_table").empty();
+                    $(".list_table").html(response.body);
+                    $(".listGrid").empty();
+                    $(".listGrid").html(response.body);
+                }
+            })
+        });
+        $(".search_by").on('keypress', function(e){
+            let sizes = [];
+            $(".size_checked").each(function( index ) {
+                if(this.checked){
+                    // console.log($(this).val());
+                    sizes.push($(this).val());
+                }
+            });
+            let categories = [];
+            $(".categorie_checked").each(function( index ) {
+                if(this.checked){
+                    // console.log($(this).val());
+                    categories.push($(this).val());
+                }
+            });
+            let colors = [];
+            $(".checkedColor").each(function( index ) {
+                if(this.checked){
+                    // console.log($(this).val());
+                    colors.push($(this).val());
+                }
+            });
+            var data = {
+                'colors' : colors,
+                'categories' : categories,
+                'sizes' : sizes,
+                'search_by' : $('.search_by').val(),
+                'price_to': $('#input_to').val(),
+                'price_from': $('#input_from').val()
+            };
+            var code = e.keyCode || e.which;
+            if(code == 13) { //Enter keycode
+                $.ajax({
+                    type: "GET",
+                    url: $("#search_btn").data('url'),
+                    data: data,
+                    success: function(response){
+                        $(".list_table").empty();
+                        $(".list_table").html(response.body);
+                        $(".listGrid").empty();
+                        $(".listGrid").html(response.body);
+                        $(".paginate_block").empty();
+                        $(".paginate_block").html(response.pagination);
+                    }
+                })
+            }
+        });
+        $(".search_by").on('keydown', function(e){
+            
+            var data = {
+                'value' : $(this).val()
+            };
+            var code = e.keyCode || e.which;
+            $.ajax({
+                type: "GET",
+                url: $("#search_btn").data('url'),
+                data: data,
+                success: function(response){
+                    console.log("seeeeend");
+                    $(".list_table").empty();
+                    $(".list_table").html(response.body);
+                    $(".listGrid").empty();
+                    $(".listGrid").html(response.body);
+                    $(".paginate_block").empty();
+                    $(".paginate_block").html(response.pagination);
+                }
+            })
+        });
           $(".delete-confirm").on('click', function(e){
           e.preventDefault();
           console.log("jkehdkead");

@@ -29,10 +29,10 @@
             </div>
         @endif
         <div class="d-flex justify-content-between align-items-center search-add">
-            <form action="{{ url('formateur/search') }}">
+            <form action="{{ url('formateur/search') }}" method="get">
                 @csrf
-                <input type="text" name="search" placeholder="Chercher un formateur">
-                <button type="submit">
+                <input type="text" name="search" class="search_by" placeholder="Chercher un formateur">
+                <button type="submit" >
                     <i class="fa fa-search"></i>
                 </button>
             </form>

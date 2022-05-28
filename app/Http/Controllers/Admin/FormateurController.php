@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
+use App\Http\Requests\FormateurRequest;
 
 class FormateurController extends Controller
 {
@@ -37,7 +38,7 @@ class FormateurController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(FormateurRequest $request)
     {
         $user = User::create($request->all());
 
