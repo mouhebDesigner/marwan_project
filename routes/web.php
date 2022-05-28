@@ -93,14 +93,14 @@ Route::put('profile', [ProfileController::class, 'update'])->name('profile.updat
 
 Route::resource('contacts', ContactControllerFront::class);
 Route::get('eleve/search', function(Request $request){
-    $students = User::where('nom', 'like', '%'.$request->search.'%')->orWhere('prenom', 'like', '%'.$request->search.'%' )->paginate(10);
+    $students = User::where('nom', 'like', '%'.$request->search.'%')->orWhere('prenom', 'like', '%'.$request->search.'%' )->where('role', 'eleve')->paginate(10);
     
     return view('admin.students.index', compact('students'));
 
     
 });
 Route::get('formateur/search', function(Request $request){
-    $formateurs = User::where('nom', 'like', '%'.$request->search.'%')->orWhere('prenom', 'like', '%'.$request->search.'%' )->paginate(10);
+    $formateurs = User::where('nom', 'like', '%'.$request->search.'%')->orWhere('prenom', 'like', '%'.$request->search.'%' )->where('role', 'formateur')->paginate(10);
     
     return view('admin.formateurs.index', compact('formateurs'));
 
