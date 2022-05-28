@@ -64,7 +64,6 @@
                     <th>Adresse Email </th>
                     <th> N° de Telephone</th>
                     <th>Formation</th>
-                    <th>N° de carte didentité</th>
                 </tr>
                 <tr>
                     <td>
@@ -84,13 +83,6 @@
                     <td>
                         <input type='text' value="{{ old('formation') }}"  name='formation' placeholder='Formation' required class="box" />
                         @error('formation')
-                            <p class="error-feedback">{{ $message }}</p>
-                        @enderror
-                    
-                    </td>
-                    <td>
-                        <input type='text' value="{{ old('cin') }}"  name='cin' placeholder='N° de carte didentité' required class="box" />
-                        @error('cin')
                             <p class="error-feedback">{{ $message }}</p>
                         @enderror
                     

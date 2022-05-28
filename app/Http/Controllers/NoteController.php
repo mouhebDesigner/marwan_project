@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cour;
+use App\Models\Note;
+use App\Models\User;
+use App\Models\Matiere;
 use Illuminate\Http\Request;
 
 class NoteController extends Controller
@@ -13,9 +17,11 @@ class NoteController extends Controller
      */
     public function index()
     {
-        //
-    }
+        $notes = Note::all();
 
+        return view('notes.index', compact('notes'));
+    }
+    
     /**
      * Show the form for creating a new resource.
      *
@@ -23,9 +29,11 @@ class NoteController extends Controller
      */
     public function create()
     {
-        //
+        $matieres = Matiere::all();
+        $eleves = User::where('role','eleve')->get();
+        return view('notes.create', compact('matieres', 'eleves'));
     }
-
+        
     /**
      * Store a newly created resource in storage.
      *
@@ -34,7 +42,9 @@ class NoteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Note::create($request->all());
+
+        return redirect('formateur/notes');
     }
 
     /**
@@ -56,7 +66,6 @@ class NoteController extends Controller
      */
     public function edit($id)
     {
-        //
     }
 
     /**
@@ -77,8 +86,12 @@ class NoteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Note $note)
     {
-        //
+
+        $note->delete();
+
+        return redirect('formateur/notes')->with('deleted', 'Ce Note a été supprimé avec succé');
+        
     }
 }

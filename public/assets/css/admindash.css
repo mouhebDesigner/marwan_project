@@ -16,15 +16,9 @@ header{
     background-size: cover;
     background-repeat: no-repeat;
 }
-.clearfix:after{
-    content: " ";
-    visibility: ;
-    display: block;
-    height: 9px;
-    clear: both;
-}
+
 .row{
-    max-width: 1180px;
+    max-width: 100vw;
     margin:0 auto;
 }
 

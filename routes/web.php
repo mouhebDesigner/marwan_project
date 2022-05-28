@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\MatiereController;
 use App\Http\Controllers\Admin\ActualiteController;
 use App\Http\Controllers\Admin\FormateurController;
+use App\Http\Controllers\ContactController as ContactControllerFront;
 use App\Http\Controllers\MatiereEtudiantController;
 
 /*
@@ -33,8 +34,7 @@ Route::middleware(['auth'])->group(function () {
             'matieres' => MatiereController::class,
         ]);
 
-        Route::get('contacts', [ContactController::class, 'index'])->name('contacts.index');
-        Route::delete('contacts', [ContactController::class, 'destroy'])->name('contacts.destroy');
+        Route::resource('contacts', ContactController::class);
 
     });
 });
@@ -50,9 +50,7 @@ Route::middleware(['auth'])->group(function () {
         ]);
 
         Route::get('eleves', [EleveController::class, 'index'])->name('eleves.index');
-        Route::get('profile', [ProfileController::class, 'index'])->name('profile.index');
-        Route::put('profile', [ProfileController::class, 'update'])->name('profile.update');
-
+        
     });
 });
 Route::middleware(['auth'])->group(function () {
@@ -86,3 +84,8 @@ Route::get('download/{id}', function($id){
     $filepath = public_path('/').$cour->fichier;
     return Response::download($filepath);
 })->name('download.file');
+
+Route::get('profile', [ProfileController::class, 'index'])->name('profile.index');
+Route::put('profile', [ProfileController::class, 'update'])->name('profile.update');
+
+Route::resource('contacts', ContactControllerFront::class);

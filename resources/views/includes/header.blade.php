@@ -11,8 +11,7 @@
         <a href="login.php"><b>Accueil</b></a>
         <a href="#"><b>Formations</b></a>
         <a href="#"><b>Diplomes</b></a>
-        <a href="inscription.php"><b>Inscription en ligne</b></a>
-        <a href="cont.php"><b>Contact</b></a>
+        <a href="{{ url('contacts') }}"><b>Contact</b></a>
         <a href="#"><b>A propos nous</b></a>
         <a href="{{ url('choisir') }}"><b>Espace privee</b></a>
     </nav>

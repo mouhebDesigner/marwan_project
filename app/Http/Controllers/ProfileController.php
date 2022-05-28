@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
-
+use Auth;
 class ProfileController extends Controller
 {
     /**
@@ -13,7 +14,7 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        //
+        return view('profile');
     }
 
     /**
@@ -66,9 +67,18 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        if($request->password != ""){
+
+            $request->validate([
+                'password' => 'required|confirmed|min:8|string',
+                'password_confirmation' => 'required',
+            ]);
+        }
+        Auth::user()->update($request->all());
+
+        return redirect('profile')->with('updated', 'Votre profile a été modifié avec succée');
     }
 
     /**

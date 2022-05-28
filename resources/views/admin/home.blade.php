@@ -38,7 +38,7 @@
       <div class="main-content-header">
         @if(Auth::user()->isAdmin())
             <h1>Admin </h1>
-            <h3><a href="{{ route('admin.students.create') }}">Ajouter un nouvel étudiant</a></h3>
+            <h3><a href="{{ route('admin.students.create') }}">Ajouter un nouvel éleve</a></h3>
             <h3><a href="{{ route('admin.students.index') }}">Liste des éleves</a></h3>
             <h3><a href="{{ route('admin.formateurs.create') }}">Ajouter un nouvel formateur</a></h3>
             <h3><a href="{{ route('admin.formateurs.index') }}">Liste de formateurs</a></h3>
@@ -52,6 +52,7 @@
             <h3><a href="{{ route('formateur.cours.index') }}">Gérer des cours</a></h3>
             <h3><a href="{{ route('formateur.notes.index') }}">Gérer des notes</a></h3>
             <h3><a href="{{ route('formateur.students.index') }}">Liste des élèves</a></h3>
+            <h3><a href="{{ route('contacts.index') }}">Contactez adminitstrateur</a></h3>
         @else 
             <h1>Elève </h1>
             <h3><a href="{{ route('cours.index') }}">Lister les cours</a></h3>

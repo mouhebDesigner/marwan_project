@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
+use App\Models\Contact;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class ContactController extends Controller
 {
@@ -14,9 +15,11 @@ class ContactController extends Controller
      */
     public function index()
     {
-        //
-    }
+        $contacts = Contact::all();
 
+        return view('admin.contacts.index', compact('contacts'));
+    }
+    
     /**
      * Show the form for creating a new resource.
      *
@@ -26,7 +29,7 @@ class ContactController extends Controller
     {
         //
     }
-
+    
     /**
      * Store a newly created resource in storage.
      *
@@ -44,9 +47,9 @@ class ContactController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Contact $contact)
     {
-        //
+        return view('admin.contacts.show', compact('contact'));
     }
 
     /**
@@ -78,8 +81,11 @@ class ContactController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Contact $contact)
     {
-        //
+        $contact->delete();
+
+        return redirect('admin/contacts')->with('deleted', 'Ce message a été supprimé avec succé');
+        
     }
 }

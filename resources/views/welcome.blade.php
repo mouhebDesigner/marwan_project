@@ -73,57 +73,6 @@
 
 <!-- services section starts  -->
 
-<section class="services" id="services">
-
-    <h1 class="heading"> Nos <span>Cours Accélérés</span> </h1>
-
-    <div class="box-container">
-
-        <div class="box" data-aos="zoom-in">
-            <span>01</span>
-            <i class="fas fa-school-circle-check"></i>
-            <h3>Avec ou sans Bac</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, rem.</p>
-        </div>
-
-        <div class="box" data-aos="zoom-in">
-            <span>02</span>
-            <i class="fas fa-plane"></i>
-            <h3>Devenir Pro</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, rem.</p>
-        </div>
-
-        <div class="box" data-aos="zoom-in">
-            <span>03</span>
-            <i class="fas fa-utensils"></i>
-            <h3>Avec ou sans Bac</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, rem.</p>
-        </div>
-
-        <div class="box" data-aos="zoom-in">
-            <span>04</span>
-            <i class="fas fa-globe"></i>
-            <h3>Avec ou sans Bac</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, rem.</p>
-        </div>
-
-        <div class="box" data-aos="zoom-in">
-            <span>05</span>
-            <i class="fas fa-hiking"></i>
-            <h3>Avec ou sans Bac</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, rem.</p>
-        </div>
-
-        <div class="box" data-aos="zoom-in">
-            <span>06</span>
-            <i class="fas fa-bullhorn"></i>
-            <h3>Avec ou sans Bac</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, rem.</p>
-        </div>
-
-    </div>
-
-</section>
 
 <!-- services section ends -->
 
@@ -189,27 +138,27 @@
 
         <div class="gallery-container">
             <a href="images/ch1.jpg" class="box">
-                <img src="images/ch1.jpg" alt="">
+                <img src="{{ asset('assets/images/ch1.jpg') }}" alt="">
                 <div class="icon"> <i class="fas fa-plus"></i> </div>
             </a>
-            <a href="images/ch2.jpg" class="box">
-                <img src="images/ch2.jpg" alt="">
+            <a href="{{ asset('assets/images/ch2.jpg') }}" class="box">
+                <img src="{{ asset('assets/images/ch2.jpg') }}" alt="">
                 <div class="icon"> <i class="fas fa-plus"></i> </div>
             </a>
-            <a href="images/ch3.jpg" class="box">
-                <img src="images/ch3.jpg" alt="">
+            <a href="{{ asset('assets/images/ch3.jpg') }}" class="box">
+                <img src="{{ asset('assets/images/ch3.jpg') }}" alt="">
                 <div class="icon"> <i class="fas fa-plus"></i> </div>
             </a>
-            <a href="images/ch4.jpg" class="box">
-                <img src="images/ch4.jpg" alt="">
+            <a href="{{ asset('assets/images/ch4.jpg') }}" class="box">
+                <img src="{{ asset('assets/images/ch4.jpg') }}" alt="">
                 <div class="icon"> <i class="fas fa-plus"></i> </div>
             </a>
-            <a href="images/ch5.jpg" class="box">
-                <img src="images/ch5.jpg" alt="">
+            <a href="{{ asset('assets/images/ch5.jpg') }}" class="box">
+                <img src="{{ asset('assets/images/ch5.jpg') }}" alt="">
                 <div class="icon"> <i class="fas fa-plus"></i> </div>
             </a>
-            <a href="images/ch6.jpg" class="box">
-                <img src="images/ch6.jpg" alt="">
+            <a href="{{ asset('assets/images/ch6.jpg') }}" class="box">
+                <img src="{{ asset('assets/images/ch6.jpg') }}" alt="">
                 <div class="icon"> <i class="fas fa-plus"></i> </div>
             </a>
         </div>

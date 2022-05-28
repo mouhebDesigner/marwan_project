@@ -663,3 +663,38 @@ section{
     color: white; 
     text-decoration:underline;
 }
+.form_contact{
+    width: 500px;
+    height: 500px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+    margin: auto;
+
+}
+.form_contact input:not(input[type="submit"]),textarea{
+    background-color: rgb(238 238 238);
+    margin-top: 10px;
+    padding: 10px;
+}
+.form_contact input[type="submit"]{
+    margin-top: 10px;
+    padding: 10px;
+    background: #f79f1f;
+}
+section.fc{
+    position: relative;
+    top: 100px;
+}
+.alert-success{
+    width: 80vw;
+    padding: 17px 40px;
+    background-color: #d1e7dd;
+    color: #0f5132;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 5px;
+    border: 2px solid;
+}

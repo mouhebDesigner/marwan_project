@@ -24,7 +24,7 @@ class CreateUsersTable extends Migration
             $table->string('specialite')->nullable();
             $table->string('adresse')->nullable();
             $table->timestamp('email_verified_at')->nullable();
-            $table->biginteger('cin')->unique();
+            $table->biginteger('cin')->unique()->nullable();
             $table->string('password');
             $table->enum('role', ['admin', 'formateur', 'eleve']);
             $table->rememberToken();

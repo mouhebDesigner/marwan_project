@@ -1,0 +1,10 @@
+.alert-success{
+    width: 80vw;
+    padding: 17px 40px;
+    background-color: #d1e7dd;
+    color: #0f5132;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 5px;
+    border: 2px solid;
+}
