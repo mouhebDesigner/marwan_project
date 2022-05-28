@@ -16,6 +16,7 @@
         </div>
     </nav>
     <section class="packages" id="packages">
+        
         <h1 class="heading"> Ajouter <span>un élève</span> </h1>
         <form method="post" action="{{ route('admin.students.store') }}">
             @csrf

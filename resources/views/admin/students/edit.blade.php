@@ -17,6 +17,7 @@
     </nav>
     <section class="packages" id="packages">
         <h1 class="heading"> Modifier <span>un élève</span> </h1>
+        
         <form method="post" action="{{ route('admin.students.update', ['student' => $student]) }}">
             @csrf
             @method('put')

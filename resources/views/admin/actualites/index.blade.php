@@ -14,6 +14,21 @@
         <h2 class="">
             Liste des actualites
         </h2>
+        @if(session('created'))
+            <div class="alert alert-success" role="alert">
+                {{ session('created') }}
+            </div>
+        @endif
+        @if(session('updated'))
+            <div class="alert alert-success" role="alert">
+                {{ session('updated') }}
+            </div>
+        @endif
+        @if(session('deleted'))
+            <div class="alert alert-success" role="alert">
+                {{ session('deleted') }}
+            </div>
+        @endif
         <div class="d-flex justify-content-between align-items-center search-add">
             <div>
                 

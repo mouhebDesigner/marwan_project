@@ -108,6 +108,6 @@ class ActualiteController extends Controller
     {
         $actualite->delete();
 
-        return redirect('admin/actualites');
+        return redirect('admin/actualites')->with('deleted', 'Cette actualité a été supprimé avec succé');
     }
 }

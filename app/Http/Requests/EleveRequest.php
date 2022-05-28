@@ -32,7 +32,6 @@ class EleveRequest extends FormRequest
             'date_naissance' => ['required'],
             "formation" => "required",
             "adresse" => "required",
-            "cin" => ['required', 'numeric', 'digits:8'],
             "password" => "required | string | min:8 | confirmed"
         ];
     }

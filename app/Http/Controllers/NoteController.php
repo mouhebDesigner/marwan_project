@@ -44,7 +44,7 @@ class NoteController extends Controller
     {
         Note::create($request->all());
 
-        return redirect('formateur/notes');
+        return redirect('formateur/notes')->with('created', 'Cette note a été ajouté avec succé');;
     }
 
     /**
@@ -91,7 +91,7 @@ class NoteController extends Controller
 
         $note->delete();
 
-        return redirect('formateur/notes')->with('deleted', 'Ce Note a été supprimé avec succé');
+        return redirect('formateur/notes')->with('deleted', 'Cette Note a été supprimé avec succé');
         
     }
 }
