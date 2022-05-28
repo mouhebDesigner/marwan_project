@@ -43,6 +43,7 @@
             </div>
             <div class="content">
                 <h1>{{ $actualite->titre }}</h1>
+                <p>{{ $actualite->description }}</p>
                 <div class="d-flex justify-content-between">
                     <a href="#" class="btn"> Lire plus</a>
                     <div>
@@ -96,7 +97,6 @@
                 <li>insurance</li>
                 <li>luxury hotel</li>
             </ul>
-            <a href="#" class="btn">S'inscrire</a>
         </div>
 
         <div class="box" data-aos="zoom-in-up">
@@ -185,7 +185,12 @@
                 <img src="{{ asset($actualite->image) }}" alt="">
             </div>
             <div class="content">
-                <h1>{{ $actualite->titre }}</h1>
+                <h1>
+                    {{ $actualite->titre }}
+                </h1>
+                <p>
+                    {{ $actualite->description }}
+                </p>
                 <div class="d-flex justify-content-between">
                     <a href="#" class="btn"> Lire plus</a>
                     <div>

@@ -30,15 +30,9 @@
                 <strong>{{ $message }}</strong>
             </span>
         @enderror
-        @if (Route::has('password.request'))
-            <a class="btn btn-link" href="{{ route('password.request') }}">
-                {{ __('Oubliez mot de passe?') }}
-            </a>
-        @endif
+        
         <input type="submit" name="submit" value="Connexion">
-        <div class="Espace_prv">
-            Espace Admin
-        </div>
+        
     </form>
 </div>
 

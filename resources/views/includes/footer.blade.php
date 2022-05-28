@@ -1,4 +1,4 @@
-<section class="footer">
+<section class="footer" id="footer">
 
     <div class="box-container">
         <div class="box" data-aos="info">
@@ -6,8 +6,7 @@
             <a href="#"> <i class="fas fa-chevron-right"></i> Accueil </a>
             <a href="#"> <i class="fas fa-chevron-right"></i> Formations </a>
             <a href="#"> <i class="fas fa-chevron-right"></i> Diplomes </a>
-            <a href="#"> <i class="fas fa-chevron-right"></i> Inscription en ligne </a>
-            <a href="#"> <i class="fas fa-chevron-right"></i> Contact </a>
+            <a href="{{ url('contacts') }}"> <i class="fas fa-chevron-right"></i> Contact </a>
             <a href="#"> <i class="fas fa-chevron-right"></i> A propos nous </a>
         </div>
 
