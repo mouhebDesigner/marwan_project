@@ -10,7 +10,7 @@
     <nav class="navbar">
         <a href="login.php"><b>Accueil</b></a>
         <a href="#"><b>Formations</b></a>
-        <a href="#"><b>Diplomes</b></a>
+        <a href="#diplomes"><b>Diplomes</b></a>
         <a href="{{ url('contacts') }}"><b>Contact</b></a>
         <a href="#footer"><b>A propos nous</b></a>
         <a href="{{ url('choisir') }}"><b>Espace privee</b></a>

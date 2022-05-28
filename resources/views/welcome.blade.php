@@ -99,7 +99,7 @@
             </ul>
         </div>
 
-        <div class="box" data-aos="zoom-in-up">
+        <div class="box" id="diplomes" data-aos="zoom-in-up">
             <h3> BTP </h3>
             <div class="price">
                 <span class="amount">2 ans</span>
@@ -111,7 +111,6 @@
                 <li>insurance</li>
                 <li>luxury hotel</li>
             </ul>
-            <a href="#" class="btn">S'inscrire</a>
         </div>
 
         <div class="box" data-aos="zoom-in-up">
@@ -126,14 +125,12 @@
                 <li>insurance</li>
                 <li>luxury hotel</li>
             </ul>
-            <a href="#" class="btn">S'inscrire</a>
         </div>
 
     </div>
     <section class="gallery" id="gallery">
         <div class="heading">
             <span>Gallery</span>
-            <h3>our untold stories</h3>
         </div>
 
         <div class="gallery-container">
