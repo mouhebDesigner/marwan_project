@@ -25,12 +25,11 @@ class FormateurRequest extends FormRequest
     {
         return [
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
             'nom' => ['required', 'string', 'max:255', 'alpha'],
             'prenom' => ['required', 'string', 'max:255', 'alpha'],
             'numtel' => ['required', 'numeric', 'digits:8'],
             'date_naissance' => ['required'],
-            "sepcailite" => "required",
+            "specialite" => "required",
             "adresse" => "required",
             "password" => "required | string | min:8 | confirmed"
         ];
