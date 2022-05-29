@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\EleveRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
-
+use Auth;
 class EleveController extends Controller
 {
     /**
@@ -18,8 +18,13 @@ class EleveController extends Controller
     public function index()
     {
         $students = User::where('role', 'eleve')->get();
+        if(Auth::user()->isAdmin()){
 
-        return view('admin.students.index', compact('students'));
+            return view('admin.students.index', compact('students'));
+        } else {
+            
+            return view('admin.students.indexFormateur', compact('students'));
+        }
     }
 
     /**
