@@ -91,13 +91,8 @@ class FormateurController extends Controller
         ]);
 
         
-        $formateur->update($request->except('password'));
-
-        if($request->password != ""){
-            $formateur->password = Hash::make($request->password);
-
-            $formateur->save();
-        }
+        $formateur->update($request->all());
+      
         $formateur->save();
 
 

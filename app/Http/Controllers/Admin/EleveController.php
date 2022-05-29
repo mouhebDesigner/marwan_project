@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Requests\EleveRequest;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Hash;
 
 class EleveController extends Controller
 {
@@ -92,14 +93,12 @@ class EleveController extends Controller
         ]);
 
         
-        $student->update($request->except('password'));
+        $student->update($request->all());
 
-        if($request->password != ""){
-            $student->password = Hash::make($request->password);
+   
 
-            $student->save();
-        }
         $student->save();
+
 
 
         return redirect('admin/students')->with('created', 'Elève a été modifié avec succé');
