@@ -28,7 +28,7 @@ class EleveRequest extends FormRequest
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'nom' => ['required', 'string', 'max:255', 'alpha'],
             'prenom' => ['required', 'string', 'max:255', 'alpha'],
-            'numtel' => ['required', 'numeric', 'digits:8'],
+            'numtel' => ['required', 'numeric', 'digits:8', 'unique:users'],
             'date_naissance' => ['required'],
             "formation" => "required",
             "adresse" => "required",
