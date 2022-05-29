@@ -28,6 +28,7 @@ class FormateurRequest extends FormRequest
             'nom' => ['required', 'string', 'max:255', 'alpha'],
             'prenom' => ['required', 'string', 'max:255', 'alpha'],
             'numtel' => ['required', 'numeric', 'digits:8', 'unique:users'],
+            'cin' => ['required', 'numeric', 'digits:8', 'unique:users'],
             'date_naissance' => ['required'],
             "specialite" => "required",
             "adresse" => "required",
